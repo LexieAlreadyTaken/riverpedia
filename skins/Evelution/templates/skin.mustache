@@ -1,0 +1,152 @@
+{{#has-servelution-unsupported}}
+	<style>
+		*, :before, :after {
+			all:initial!important;
+		}
+		*:not(html):not(body):not(.warn) {
+			display:none!important;
+		}
+		
+	</style>
+	<div class="warn">
+		Evelution can't run on this Servelution client
+		<br class="warn">
+		Please upgrade your Servelution client to one that supports the CPE Language Recompiler
+	</div>
+{{/has-servelution-unsupported}}
+
+{{^has-servelution-unsupported}}
+{{>Icons}}
+	<div style="position:absolute; z-index:-1;">
+		<div class="cpe-system-colors">
+			<span class="fc-mozbuttonface" style="color:-moz-dialog"></span>
+			<span class="fc-mozbuttontext" style="color:-moz-dialogtext"></span>
+			<span class="fc-buttonface" style="color:buttonface"></span>
+			<span class="fc-buttontext" style="color:buttontext"></span>
+			<span class="fc-canvas" style="color:canvas;"></span>
+			<span class="fc-linktext" style="color:linktext;"></span>
+			<span class="fc-graytext" style="color:graytext;"></span>
+			<span class="fc-canvastext" style="color:canvastext;"></span>
+			<span class="fc-highlight" style="color:highlight;"></span>
+			<span class="fc-background" style="color:background;"></span>
+			<span class="fc-activecaption" style="color:activecaption;"></span>
+			<span class="fc-inactivecaption" style="color:inactivecaption;"></span>
+		</div>
+		<!-- Theming -->
+		<div class="cpe-theming visualcolors-standard theme-A"></div>
+		<div class="cpe-theming visualcolors-standard theme-B"></div>
+		<div class="cpe-theming visualcolors-standard theme-C"></div>
+		<div class="cpe-theming visualcolors-standard theme-D"></div>
+		<div class="cpe-theming visualcolors-standard theme-E"></div>
+		<div class="cpe-theming visualcolors-standard theme-F"></div>
+		<div class="cpe-theming visualcolors-standard theme-G"></div>
+		<div class="cpe-theming visualcolors-standard theme-H"></div>
+		<!-- Theming 2 -->
+		<div class="cpe-theming visualcolors-nocolormanagement theme-A"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-B"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-C"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-D"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-E"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-F"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-G"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-H"></div>
+	</div>
+	<div tabindex="-1" class="focus-overlay" style="pointer-events:none;"></div>
+	<div id="LunaLevit" style=" pointer-events: none; position: fixed; z-index: -2; width: 100%; height: 100%;">
+		<div class="invertion-on" style=" pointer-events: none; position: fixed; z-index: -2; width: 100%; height: 100%;">
+			<div id="LunaLevit3" class="desktop-background fandom-community-header__background" style="position:absolute; pointer-events:none;" id="desktop-background">
+			</div>
+		</div>
+	</div>
+	<container class="{{^has-server-mode}}home-mode{{/has-server-mode}}{{#has-server-mode}}server-mode{{/has-server-mode}}{{#has-disabled-rail}} no-rail{{/has-disabled-rail}}{{#has-forced-full-width}} forced-full{{/has-forced-full-width}}{{#has-no-color-management}} no-color-management{{/has-no-color-management}}" {{^has-servelution-vanadium}}sticky-rail="{{{html-sticky-rail}}}"{{/has-servelution-vanadium}} id="top"> <!--<container> -->
+		<main class="main-container">
+			<div class="top-gap" responsive></div>
+			{{>CommunityHeader}}
+			<section class="evelution-content resizable-container" responsive id="mw-content" onclick="">
+				{{>TopActions}}
+				<div class="evelution-wrapper page">
+					{{>PageActions}}
+					<div class="evelution-article-wrapper">
+					  <div class="evelution-actions-with-article">
+						  <nav class="evelution-article-container page__main">
+							{{>PageHeader}}
+							<div class="evelution-article-content">
+								  {{>ServerActions}}
+								  <!-- Begin Article -->
+								  <article class="evelution-article page-content" id="content">
+									{{>ContentBody}}
+								  </article>
+								  <!-- End Article -->
+							  </div>
+							  <!-- Begin Footer
+							<div class="evelution-page-header evelution-page-footer page-header">
+								<div class="evelution-page-header-main page-header__bottom">
+									<div class="evelution-page-header-title page-header__title-wrapper">
+										{{#data-footer}}
+										{{!}}{{#data-info}}{{>FooterList}}{{/data-info}}
+										{{/data-footer}}
+									</div>
+								</div>
+							</div>
+						  <!-- End Footer -->
+						  </nav>
+					  </div>
+					  <nav class="evelution-rail-wrapper evelution-right-rail page__right-rail WikiaRail">
+						{{>Modules}}
+					  </nav>
+					</div>
+				</div>
+			</section>
+		{{>EvelutionFooter}}
+		{{>Taskbar}}
+
+		</main>
+	</container>
+
+<style>
+	{{>OldServelutionEmulation}}
+
+</style>
+
+<!-- Base -->
+<script>
+/* Base JS */
+
+{{>Java_Check}}
+</script>
+
+<script>
+/* Base JS */
+
+{{>Java_Base}}
+</script>
+
+<!--Theming-->
+<script>
+/* Chroma JS */
+
+{{>Java_Chroma}}
+</script>
+
+<script>
+/* Theming JS */
+
+{{>Java_Theming}}
+</script>
+
+<!-- Headroom -->
+<script>
+/* Headroom JS */
+
+{{>Java_Header}}
+</script>
+
+
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&family=Commissioner:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200;300;400;700;800&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Lora:wght@100;300;400;500;700;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+{{/has-servelution-unsupported}}
