@@ -187,7 +187,50 @@ $wgNamespacesWithSubpages[NS_TEMPLATE] = true;
 // 为我添加的命名空间定义常量。
 define("TECH", 3000); // 这必须是偶数。
 define("TECH_TALK", 3001); // 这必须是下一个奇整数。
+define("QUASI", 3100); // 这必须是偶数。
+define("QUASI_TALK", 3101); // 这必须是下一个奇整数。
+define("LIBRARY", 3110); // 这必须是偶数。
+define("LIBRARY_TALK", 3111); // 这必须是下一个奇整数。
+define("URASITE", 3120); // 这必须是偶数。
+define("URASITE_TALK", 3121); // 这必须是下一个奇整数。
 
 // 添加命名空间。
 $wgExtraNamespaces[TECH] = "开发者";
 $wgExtraNamespaces[TECH_TALK] = "开发者讨论"; // 请注意命名空间名称中的下划线
+$wgGroupPermissions['user']['writeapi'] = true;
+$wgExtraNamespaces[QUASI] = "准OC";
+$wgExtraNamespaces[QUASI_TALK] = "准OC讨论"; // 请注意命名空间名称中的下划线
+$wgExtraNamespaces[LIBRARY] = "文库";
+$wgExtraNamespaces[LIBRARY_TALK] = "文库讨论"; // 请注意命名空间名称中的下划线
+$wgExtraNamespaces[URASITE] = "田土";
+$wgExtraNamespaces[URASITE_TALK] = "田土讨论"; // 请注意命名空间名称中的下划线
+
+wfLoadExtension( 'intersection' );
+wfLoadExtension( 'CodeMirror' );
+wfLoadExtension( 'ReadingLists' );
+wfLoadExtension( 'TemplateWizard' );
+wfLoadExtension( 'Graph' );
+wfLoadExtension( 'Kartographer' );
+wfLoadExtension( 'CirrusSearch' );
+wfLoadExtension( 'Cargo' );
+#wfLoadExtension( 'HidePrefix' );
+require_once( "$IP/extensions/HidePrefix/HidePrefix.php" );
+
+#dependencies, instead of directly used extensions
+wfLoadExtension( 'JsonConfig' );
+wfLoadExtension( 'Elastica' );
+wfLoadExtension( 'Parsoid', 'vendor/wikimedia/parsoid/extension.json' );
+
+if ( $_SERVER['REMOTE_ADDR'] == '117.184.69.178' ) {
+	$wgGroupPermissions['*']['read'] = true;
+	$wgGroupPermissions['*']['edit'] = true;
+	$wgGroupPermissions['*']['writeapi'] = true;
+  }
+if ( $_SERVER['REMOTE_ADDR'] == '101.82.81.148' ) {
+	$wgGroupPermissions['*']['read'] = true;
+	$wgGroupPermissions['*']['edit'] = true;
+	$wgGroupPermissions['*']['writeapi'] = true;
+  }
+$wgFavicon = "$wgScriptPath/favicon.ico";
+$wgGroupPermissions['*']['gadgets-edit'] = true;
+$wgGroupPermissions['*']['gadgets-definition-edit'] = true;
